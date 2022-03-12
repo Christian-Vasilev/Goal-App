@@ -37,12 +37,19 @@ const GoalInput = ({ addGoalHandler, showModal, changeModalState }) => {
           onChangeText={handleOnTextChage}
         />
         <View style={styles.actionButtonsWrapper}>
-          <Button title='ADD' onPress={() => enteredGoalCancelHandler(enteredGoal)} />
-          <Button 
-            title='Cancel' 
-            color='red'
-            onPress={enteredGoalCancelHandler} 
-           />
+          <View style={styles.button}>
+            <Button 
+              title='ADD' 
+              onPress={() => enteredGoalCancelHandler(enteredGoal)} 
+            />
+          </View>
+          <View style={styles.button}>
+            <Button 
+              title='Cancel' 
+              color='red'
+              onPress={enteredGoalCancelHandler} 
+            />
+          </View>
         </View>
       </View>
     </Modal>
@@ -64,6 +71,11 @@ const styles = StyleSheet.create({
   },
   actionButtonsWrapper: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '60%'
+  },
+  button: {
+    width: '40%'
   }
 });
 
